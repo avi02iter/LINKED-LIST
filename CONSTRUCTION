@@ -1,0 +1,14 @@
+class Node{       //this is a class of nodewhich contains a data and address of the next element
+    int data;
+    Node next;
+    Node(int data,Node next){
+    this.data=data;
+    this.next=next;
+    }
+}
+
+class LinkedList{     //this is the class of whole linked list which contain head and tail and have its size
+Node head;
+Node tail;
+int size;
+}
