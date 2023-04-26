@@ -1,0 +1,21 @@
+//CODE
+
+
+ // removing the first element in linked list
+        void removefirst() {
+            if(head==null){
+                System.out.println("empty list");
+            }
+            if(head.next==null){
+                head=null;
+                return;
+            }
+            head=head.next;
+
+        }
+        
+        //if head ==null means no elemnt then print empty list;
+        
+        //if head.next==null means only 1 element then that element connect to the null
+        
+        //if dono upar nhi hai then we have a good linked list then do one thing head=head.next; means head ko ek aage badha do means head ko 2 ke upar krdo 1 automatucally delink hojayega
