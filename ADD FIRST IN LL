@@ -1,0 +1,12 @@
+//CODE
+
+ //add first in ll
+        void addFirst(int value){
+            Node temp=new Node(value,null);
+            if(head==null){
+               head=temp;       // if only one element then add 
+               return;
+            }
+            temp.next=head;
+            head=temp;
+        }
