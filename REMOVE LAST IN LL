@@ -17,7 +17,7 @@
                  // ab last me  agye
                  //now
                  secondLast.next=null;
-
+                size--;
             }
         }
         
