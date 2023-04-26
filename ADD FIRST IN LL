@@ -9,4 +9,5 @@
             }
             temp.next=head;
             head=temp;
+            size++;
         }
