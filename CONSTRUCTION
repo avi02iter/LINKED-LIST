@@ -12,3 +12,62 @@ Node head;
 Node tail;
 int size;
 }
+
+
+//OR 
+
+
+import java.util.*;
+
+public class linked {
+    // this is the class for node
+    public static class Node {
+        int data;
+        Node next;
+        Node(int data,Node next){
+            this.data=data;
+            this.next=next;
+        }
+    }
+
+    // this is the class for overall linked list
+    public static class list {
+        Node head;
+        Node tail;
+        int size;
+
+        void addLast(int value) {
+            Node temp = new Node(value,null);
+            if (size == 0) {
+                head = tail = temp;
+            } else {
+                tail.next = temp;
+                tail = temp;
+            }
+            size++;
+
+        }
+
+        void print() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + "--> ");
+                temp = temp.next;
+            }
+
+        }
+    }
+
+    public static void main(String[] args) {
+        list li = new list();
+        li.addLast(2);
+        li.addLast(3);
+        li.addLast(4);
+        li.addLast(5);
+        li.addLast(6);
+        li.addLast(7);
+        li.print();
+
+    }
+}
+//sample part in which 2,3,4,5,6,7 is adding at the last
