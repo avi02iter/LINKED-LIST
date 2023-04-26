@@ -1,0 +1,38 @@
+//CODE
+
+ //find first linked list
+        void first(){
+        if(head===null){
+            sout("list is empty");
+            }
+            System.out.println("FIRST VALUE IS ="+head.data);
+        }
+  //find last of linked list
+        void last(){
+         if(head===null){
+            sout("list is empty");
+            }
+             Node temp=head;
+             while(temp.next!=null){
+                temp=temp.next;
+             }
+             System.out.println("LAST VALUE IS="+temp.data);
+        }
+    //find the elemnt index is given
+        void find(int index){
+         if(head===null){
+            sout("list is empty");
+            }
+            if(index>=size||index<0){
+            sout("wrong index");
+            }
+            Node temp=head;
+            int i=0;
+            while(temp!=null){
+                i++;
+                if(i==index){
+                    System.out.println("FOUND VALUE IS="+temp.data);
+                }
+                temp=temp.next;
+            }
+        }
