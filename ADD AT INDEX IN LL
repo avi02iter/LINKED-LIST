@@ -32,7 +32,7 @@
                 nn.next=temp.next;
                 temp.next=nn;
                 
-
+                 size++;
 
             }
 
