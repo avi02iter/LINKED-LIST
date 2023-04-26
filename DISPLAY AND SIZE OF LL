@@ -1,1 +1,16 @@
+//CODE
 
+ void print() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + "--> ");
+                temp = temp.next;
+            }
+            System.out.println();
+
+        }
+
+        // for size
+        void getsize() {
+            System.out.println(size);
+        }
