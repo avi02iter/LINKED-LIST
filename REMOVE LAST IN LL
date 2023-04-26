@@ -1,0 +1,24 @@
+//CODE
+
+//remove last of ll
+        void removelast(){
+            if(head==null){   // 0 element
+                System.out.println("list is empty");
+            }else if(head.next==null){    // 1 element
+                head=null;
+                return;
+            }else{     // normal case many element
+                 Node secondLast=head;
+                 Node last=head.next;
+                 while(last.next!=null){
+                    last=last.next;
+                    secondLast=secondLast.next;
+                 }
+                 // ab last me  agye
+                 //now
+                 secondLast.next=null;
+
+            }
+        }
+        
+        //search for the second last and second last ke next ko null krdo isse last wala garbage me chala jeyega
