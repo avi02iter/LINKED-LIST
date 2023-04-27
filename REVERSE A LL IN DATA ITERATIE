@@ -1,0 +1,36 @@
+//CODE
+//SIMPLE REVERSE A LL LIKE WE ARE REVERSING A ARRAY BY PUTTING START AND END POINTER AND JAB TAK START<END HAI TAB TAK START AUR END KO SWAP KRTE RHO
+
+*****************************************************************************************************************************************************
+
+//reversing ll
+        void reverse(){
+         int start=0;
+         int end=size-1;
+        
+         while(start<end){
+            Node l=getNode(start);   //basically get node se uss index par node mil ja rha and then uss start and end ke node ko swap kr de rhe
+            Node r=getNode(end);
+            int temp=l.data;
+            l.data=r.data;
+            r.data=temp;
+            start++;
+            end--;
+         }
+        }
+        //get node to reverse a ll
+        Node getNode(int index){
+            Node temp=head;
+            int i=0;
+            while(temp!=null){
+               if(i==index){
+                break;
+               }
+               i++;
+               temp=temp.next;
+            }
+            return temp;
+        }
+        
+        
+        //swap krte krte last me if start<end then hogya swap
