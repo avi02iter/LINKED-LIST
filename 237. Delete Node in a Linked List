@@ -1,0 +1,26 @@
+// INDEX IS GIVEN AND WE HAVE TO REMOVE THE GIVEN THE NODE AT THE INDEX
+//CODE
+
+class GfG
+{
+    Node deleteNode(Node head, int x)
+    {
+	   	if(x==1){
+	   	    return head.next;
+	   	}
+	   	Node curr=head;
+	   	
+	   	for(int i=2;i<x;i++){
+	   	    curr=curr.next;
+	   	}
+	   	curr.next=curr.next.next;
+	   	
+	   	return head;
+    }
+}
+
+
+//now this is a code for leetcode medium question
+
+//code
+
