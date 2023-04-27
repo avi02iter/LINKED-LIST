@@ -1,0 +1,33 @@
+//same take prev , curr and give curr to prev and next to curr and then move the pointer of prev to current and curr to next...
+// at last when we have reverse of ll but the head and tail is at their position so at last move the head to last i.e to the prev pointer becoz the prev pointer is at the last of ll as current is on the null pointer.
+
+//code
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        if(head==null){
+            return head;
+        }
+        ListNode prev=null;
+        ListNode curr=head;
+        while(curr!=null){
+            ListNode nex=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=nex;
+
+        }
+        head=prev;
+        return head;
+    }
+}
