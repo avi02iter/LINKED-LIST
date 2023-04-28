@@ -1,4 +1,4 @@
-Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
 
 //code for finding out the element n from end gfg question 
 //Given a linked list consisting of L nodes and given a number N. The task is to find the Nth node from the end of the linked list.
@@ -28,4 +28,87 @@ class GfG
     }
 }
 
+//original subject topic queion of leetcode
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
 
+//code 
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if(head==null){        //edge case
+            return null;
+        }
+        if(head.next==null){     //egde case
+            head=null;
+            return head;
+        }
+        int size=0;
+        ListNode temp=head;
+        while(temp!=null){     // calculating the size of the linked list
+            size++;
+            temp=temp.next;
+        }
+
+        int N=size-n;
+        ListNode curr=head;
+        if(N==0){
+            return head.next;
+        }
+        for(int i=0;i<N-1;i++){
+           curr=curr.next;
+        }
+        if(curr.next!=null){
+            curr.next=curr.next.next;
+        }
+
+        return head;
+    }
+}
+
+//another way by using slow and fast pointer and make a dummy node and point it to the start of list and move fast poninter till n then move slow pointer and afst till fast pointer reaches null and thenn slow.next->slow.next.next
+
+//code
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if(head.next==null){
+            return null;
+        }
+        ListNode start=new ListNode();
+        start.next=head;
+        ListNode slow=start;
+        ListNode fast=start;
+        for(int i=0;i<n;i++){
+            fast=fast.next;
+        }
+        while(fast.next!=null){
+            fast=fast.next;
+            slow=slow.next;
+        }
+
+        slow.next=slow.next.next;
+
+        return start.next;
+
+    }
+}\\//make dry run
