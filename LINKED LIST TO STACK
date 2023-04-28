@@ -1,0 +1,96 @@
+//MAKE A STACK USING LL IN WHIC PUSH IS THERE FOR ADDFIRST AND POP IS THERE TO REMOVE REMOVE FIRST
+
+//CODE
+
+import java.util.*;
+
+public class ll1 {
+
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data, Node next) {
+            this.data = data;
+            this.next = next;
+        }
+    }
+
+    static class linked {
+        Node head;
+        int size;
+
+        // adding first
+        void addFirst(int value) {
+            Node temp = new Node(value, null);
+            if (head == null) {
+                head = temp;
+                return;
+            }
+            temp.next = head;
+            head = temp;
+            size++;
+        }
+
+        // remove from first
+        void removefirst() {
+            if (head == null) {
+                System.out.println("empty");
+            } else if (head.next == null) {
+                head = null;
+                return;
+            }
+            head = head.next;
+
+            size--;
+        }
+
+        // getfirst
+        int getfirst() {
+            return head.data;
+        }
+
+        int getsize() {
+            return size;
+        }
+
+        void display() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        linked li = new linked();
+        // adding to the stack
+
+        li.addFirst(10);
+        li.addFirst(20);
+
+        li.addFirst(5);
+
+        li.addFirst(8);
+
+        li.addFirst(2);
+
+        li.addFirst(4);
+
+        li.addFirst(11);
+
+        li.display();
+
+        // top
+        System.out.println(li.getfirst());
+        // size
+        System.out.println(li.getsize());
+        // pop
+        li.removefirst();
+
+        li.display();
+       
+
+    }
+}
