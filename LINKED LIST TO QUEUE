@@ -1,0 +1,105 @@
+// FOR THIS push means adding to the last and pop means removing from the starting kyunki phle jo gya whi phle niklega
+
+
+
+//code
+
+import java.util.*;
+
+public class ll1 {
+
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data, Node next) {
+            this.data = data;
+            this.next = next;
+        }
+    }
+
+    static class linked {
+        Node head;
+        int size;
+
+       
+
+        // remove from first
+        void removefirst() {
+            if (head == null) {
+                System.out.println("empty");
+            } else if (head.next == null) {
+                head = null;
+                return;
+            }
+            head = head.next;
+
+            size--;
+        }
+
+        //addlast
+        void addLast(int value){
+            Node temp=new Node(value,null);
+              Node curr=head;
+              if(head==null){
+                head=temp;
+                size++;
+                return;
+              }
+              while(curr.next!=null){
+                curr=curr.next;
+              }
+              curr.next=temp;
+              size++;
+        }
+
+        // getfirst
+        int getfirst() {
+            return head.data;
+        }
+
+        int getsize() {
+            return size;
+        }
+
+        void display() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        linked li = new linked();
+        // adding to the stack
+
+        li.addLast(10);
+        li.addLast(20);
+
+        li.addLast(5);
+
+        li.addLast(8);
+
+        li.addLast(2);
+
+        li.addLast(4);
+
+        li.addLast(11);
+
+        li.display();
+
+       // top
+        System.out.println(li.getfirst());
+        // size
+        System.out.println(li.getsize());
+        // pop
+        li.removefirst();
+
+        li.display();
+       
+
+    }
+}
+
