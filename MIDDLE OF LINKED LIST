@@ -1,0 +1,26 @@
+BY THE SLOW AND FAST POINTER
+//CODE
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode slow=head;
+         ListNode fast=head;
+         while(fast!=null&&fast.next!=null){       //make sure fast ek aage aur uske aage ka aage null na ho tabhi to hum fast ko two pointer aage krnege agar dono me se koi ek null ho gya to error aa jayega
+             fast=fast.next.next;
+             slow=slow.next;
+         }
+         
+         
+         return slow;
+    }
+}
