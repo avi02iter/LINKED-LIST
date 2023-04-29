@@ -22,8 +22,11 @@ class Solution {
            return head;
        }
        ListNode mid=middle(head);
+       ListNode nhead=mid.next;   
+       mid.next=null;     //important line
        ListNode left=sortList(head);
-       ListNode right=sortList(mid.next);
+       
+       ListNode right=sortList(nhead);
        return merging(left,right);
     }
     
@@ -34,7 +37,7 @@ class Solution {
         }
         ListNode slow=head;
         ListNode fast=head;
-        while(fast!=null&&fast.next!=null){
+        while(fast.next!=null&&fast.next.next!=null){
             fast=fast.next.next;
             slow=slow.next;
         }
