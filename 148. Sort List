@@ -23,10 +23,10 @@ class Solution {
        }
        ListNode mid=middle(head);
        ListNode nhead=mid.next;   
-       mid.next=null;     //important line
-       ListNode left=sortList(head);
+       mid.next=null;     //important line   ye kr rhe kyunki hum new list bana kar merge me bhej rhe jiske liye dono list left sur right me null hona chahiye ab left me to hai null but right me nhi hai to hum null aage laga denge
+       ListNode left=mergeSort(head);
        
-       ListNode right=sortList(nhead);
+       ListNode right=mergeSort(nhead);
        return merging(left,right);
     }
     
