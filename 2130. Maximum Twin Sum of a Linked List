@@ -7,3 +7,54 @@ Given the head of a linked list with even length, return the maximum twin sum of
 
 //code
 
+class Solution {
+    public int pairSum(ListNode head) {
+     ListNode first=head;
+     ListNode mid=middle(head); 
+     ListNode second=reverse(mid);   //now our pointer is on first node of reversed list of second half
+
+     int max=Integer.MIN_VALUE;
+     while(first!=null&&second!=null){
+         max=Math.max(max,first.val+second.val);
+         first=first.next;
+         second=second.next;
+     }
+
+     return max;
+    }
+    
+    //finding the middle of the list
+    public ListNode middle(ListNode head){
+       ListNode slow=head;
+       ListNode fast=head;
+       while(fast!=null&&fast.next!=null){
+           fast=fast.next.next;
+           slow=slow.next;
+       }
+
+       return slow;
+
+    }
+
+    //finding the reverse of the list
+    public ListNode reverse(ListNode head){
+        if(head==null){
+            return head;
+        }
+        ListNode prev=null;
+        ListNode curr=head;
+        while(curr!=null){
+            ListNode ne=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=ne;
+
+        }
+        head=prev;
+        return head;
+
+    }
+}
+
+
+//IN THIS FIRST WE HAVE FIND THE MIDDLE HALF AND THEN REVERSE THE MIDDLE HALF AND THEN FIRST POINTER IS ON THE FURST HALF HEAD AND SECOND POINTER IS ON THE SECOND HALF HEAD AND THEN FIND THE MAX TWIN SUM
